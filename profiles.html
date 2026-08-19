@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Watching? | Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #141414;
+            color: #fff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            height: 40px;
+        }
+        h1 {
+            font-size: 3.5vw;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        .profiles {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+        }
+        .profile-card {
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 140px;
+        }
+        .profile-card:hover .avatar {
+            border-color: #fff;
+        }
+        .profile-card:hover .name {
+            color: #fff;
+        }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            object-fit: cover;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 12px;
+            transition: 0.2s;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .name {
+            color: #808080;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+        .kids .avatar {
+            background: linear-gradient(135deg, #1e90ff, #00ced1);
+        }
+        .manage {
+            margin-top: 50px;
+            border: 1px solid #808080;
+            color: #808080;
+            background: transparent;
+            padding: 10px 28px;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .manage:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .avatar { width: 100px; height: 100px; }
+            .profile-card { width: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="Netflix-Logo-PNG-File.png" alt="Netflix" class="logo">
+
+    <h1>Who's watching?</h1>
+
+    <div class="profiles" id="profiles">
+        <!-- filled by JS -->
+    </div>
+
+    <button class="manage" onclick="alert('Profile management coming soon')">
+        MANAGE PROFILES
+    </button>
+
+    <script src="app.js"></script>
+    <script>
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+        const firstName = user && user.name ? user.name.split(" ")[0] : "User";
+
+        const profilesEl = document.getElementById("profiles");
+
+        const profiles = [
+            { name: firstName, avatar: "profile.jpg", type: "adult" },
+            { name: "Kids", avatar: null, type: "kids" }
+        ];
+
+        profiles.forEach(p => {
+            const card = document.createElement("div");
+            card.className = "profile-card" + (p.type === "kids" ? " kids" : "");
+            card.innerHTML = `
+                <div class="avatar">
+                    ${p.avatar
+                        ? `<img src="${p.avatar}" alt="${p.name}">`
+                        : `<i class="fa-solid fa-child"></i>`}
+                </div>
+                <div class="name">${p.name}</div>
+            `;
+            card.onclick = () => {
+                localStorage.setItem("activeProfile", p.type);
+                localStorage.setItem("activeProfileName", p.name);
+                window.location.href = "home.html";
+            };
+            profilesEl.appendChild(card);
+        });
+    </script>
+</body>
+</html>

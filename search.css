@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#141414;
+    color:white;
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 60px;
+
+    background:rgba(0,0,0,.92);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    width:120px;
+
+    cursor:pointer;
+
+}
+
+.search-container{
+
+    display:flex;
+
+    align-items:center;
+
+    background:#222;
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+    width:420px;
+
+}
+
+.search-container i{
+
+    color:#aaa;
+
+}
+
+.search-container input{
+
+    margin-left:12px;
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.back-btn{
+
+    padding:10px 24px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#e50914;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#f6121d;
+
+}
+/* ===========================
+        HEADER
+=========================== */
+
+.header{
+
+    padding-top:120px;
+
+    text-align:center;
+
+}
+
+.header h1{
+
+    font-size:50px;
+
+    margin-bottom:10px;
+
+}
+
+.header p{
+
+    color:#bbb;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+        FILTER
+=========================== */
+
+.filter{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:40px 0;
+
+}
+
+#category{
+
+    padding:12px 20px;
+
+    background:#222;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+/* ===========================
+        MOVIES
+=========================== */
+
+.movies{
+
+    padding:0 60px 60px;
+
+}
+
+.movie-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.movie-card{
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.movie-card img{
+
+    width:100%;
+
+    height:330px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    transition:.35s;
+
+}
+
+.movie-card p{
+
+    margin-top:12px;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+.movie-card:hover{
+
+    transform:scale(1.07);
+
+}
+
+.movie-card:hover img{
+
+    box-shadow:0 15px 35px rgba(0,0,0,.6);
+
+}
+/* ===========================
+        FOOTER
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#888;
+
+    border-top:1px solid #222;
+
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:15px;
+
+        padding:20px;
+
+    }
+
+    .search-container{
+
+        width:100%;
+
+    }
+
+    .movies{
+
+        padding:20px;
+
+    }
+
+    .header{
+
+        padding-top:170px;
+
+    }
+
+}

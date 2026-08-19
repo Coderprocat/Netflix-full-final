@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Netflix</title>
+
+    <link rel="stylesheet"
+          href="profile.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+                    NAVBAR
+    =========================================== -->
+
+    <header class="profile-navbar">
+
+        <a href="home.html">
+
+            <img
+                src="Netflix-Logo-PNG-File.png"
+                class="logo"
+                alt="Netflix">
+
+        </a>
+
+
+        <button
+            class="home-btn"
+            onclick="window.location.href='home.html'">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ==========================================
+                  PROFILE CONTENT
+    =========================================== -->
+
+    <main class="profile-page">
+
+
+        <!-- PROFILE CARD -->
+
+        <section class="profile-card">
+
+            <div class="profile-image-wrapper">
+
+                <img
+                    src="profile.jpg"
+                    class="profile-img"
+                    alt="Profile">
+
+                <div class="online-dot"></div>
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <h1 id="userName">
+                    User
+                </h1>
+
+                <p id="userEmail">
+                    
+                </p>
+
+                <span class="member-badge">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Premium Member
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+                     PROFILE OPTIONS
+        =========================================== -->
+
+        <section class="profile-options">
+
+
+            <!-- SAVED MOVIES -->
+
+            <div
+                class="option-card saved-card"
+                id="savedMoviesCard">
+
+                <div class="option-icon">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+                <div class="option-content">
+
+                    <h2 id="myListCount">
+                        0
+                    </h2>
+
+                    <h3>
+                        Saved Movies
+                    </h3>
+
+                    <p>
+                        View your personal movie list
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right option-arrow"></i>
+
+            </div>
+
+
+
+            <!-- MEMBERSHIP -->
+
+            <div
+                class="option-card membership-card">
+
+                <div class="option-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+                <div class="option-content">
+
+                    <h2>
+                        Premium
+                    </h2>
+
+                    <h3>
+                        Membership
+                    </h3>
+
+                    <p>
+                        Your plan is active
+                    </p>
+
+                </div>
+
+                <span class="active-badge">
+                    Active
+                </span>
+
+            </div>
+
+
+
+            <!-- SETTINGS -->
+
+            <div
+                class="option-card settings-card"
+                id="settingsCard">
+
+                <div class="option-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </div>
+
+                <div class="option-content">
+
+                    <h2>
+                        Settings
+                    </h2>
+
+                    <h3>
+                        Account Settings
+                    </h3>
+
+                    <p>
+                        Manage your profile preferences
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right option-arrow"></i>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+                    QUICK ACTIONS
+        =========================================== -->
+
+        <section class="quick-section">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <div class="quick-actions">
+
+
+                <button
+                    onclick="window.location.href='mylist.html'">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    My List
+
+                </button>
+
+
+                <button
+                    onclick="window.location.href='search.html'">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Search Movies
+
+                </button>
+
+
+                <button
+                    onclick="window.location.href='home.html'">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Browse Netflix
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+                    LOGOUT
+        =========================================== -->
+
+        <button
+            class="logout-btn"
+            id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </main>
+
+
+
+    <!-- ==========================================
+                 SETTINGS MODAL
+    =========================================== -->
+
+    <div
+        class="settings-overlay"
+        id="settingsOverlay">
+
+
+        <div class="settings-modal">
+
+
+            <button
+                class="close-settings"
+                id="closeSettings">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="settings-title">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <h2>
+                    Account Settings
+                </h2>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h3>
+                        Profile
+                    </h3>
+
+                    <p id="settingsName">
+                        User
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p id="settingsEmail">
+                        
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h3>
+                        Membership
+                    </h3>
+
+                    <p>
+                        Premium Plan
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-crown"></i>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+
+                    <h3>
+                        Language
+                    </h3>
+
+                    <p>
+                        English
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-language"></i>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+                     FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            Netflix Clone © 2026
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+            <a href="#">
+                Help Centre
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

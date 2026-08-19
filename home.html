@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix - Home</title>
+
+    <link rel="icon" type="image/png" href="Netflix-Logo-PNG-File.png">
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="preview-extra.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="left">
+
+            <a href="home.html">
+                <img src="Netflix-Logo-PNG-File.png" class="logo" alt="Netflix Logo">
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html" data-section="home" class="nav-link active">Home</a></li>
+                    <li><a href="home.html?section=tv" data-section="tv" class="nav-link">TV Shows</a></li>
+                    <li><a href="home.html?section=movies" data-section="movies" class="nav-link">Movies</a></li>
+                    <li><a href="home.html?section=new" data-section="new" class="nav-link">New & Popular</a></li>
+                    <li><a href="mylist.html" data-section="mylist" class="nav-link">My List</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="right">
+
+            <div class="search-icon" onclick="window.location.href='search.html'">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="kids" onclick="window.location.href='profiles.html'" style="cursor:pointer" title="Switch Profile">
+                <span>Kids</span>
+            </div>
+
+            <span class="children-text">User</span>
+
+            <a href="profile.html" class="profile-container">
+                <img src="profile.jpg" class="profile" alt="Profile">
+                <i class="fa-solid fa-caret-down"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+
+        <div class="hero-bg"></div>
+
+        <div class="hero-trailer" id="heroTrailer">
+            <iframe id="trailerIframe" src="" frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="banner-content">
+
+            <div class="netflix-series">
+                <span>N</span> FILM
+            </div>
+
+            <h1>Gran Turismo</h1>
+
+            <div class="hero-details">
+                <span class="match">98% Match</span>
+                <span>2023</span>
+                <span>2h 14m</span>
+                <span class="hd">HD</span>
+            </div>
+
+            <p>
+                Based on the incredible true story of a young gamer whose racing skills
+                earned him the chance to become a professional race car driver.
+            </p>
+
+            <div class="buttons">
+                <button class="play" onclick="location.href='movie.html?id=15'">
+                    <i class="fa-solid fa-play"></i> Play
+                </button>
+                <button class="info" id="moreInfoBtn">
+                    <i class="fa-solid fa-circle-info"></i> More Info
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <div id="homePageContent">
+
+            <!-- TOP 10 -->
+            <section class="top10-section">
+                <div class="top10-heading">
+                    <h2>Top 10 in India Today</h2>
+                    <button class="top10-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="top10-row" id="top10Movies"></div>
+            </section>
+
+            <!-- CONTINUE WATCHING -->
+            <section class="movie-section" id="continueSection">
+                <div class="section-heading">
+                    <h2>Continue Watching</h2>
+                    <button class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="movie-row" id="continueWatching"></div>
+            </section>
+
+            <!-- MY LIST -->
+            <section class="movie-section" id="myListSection">
+                <div class="section-heading">
+                    <h2>My List</h2>
+                    <button class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="movie-row" id="myListMovies"></div>
+            </section>
+
+            <!-- RECENTLY VIEWED -->
+            <section class="movie-section" id="recentSection">
+                <div class="section-heading">
+                    <h2>Recently Viewed</h2>
+                    <button class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="movie-row" id="recentMovies"></div>
+            </section>
+
+            <!-- DYNAMIC GENRE ROWS -->
+            <div id="genreRows"></div>
+
+        </div>
+
+        <!-- CATEGORY / NEW & POPULAR PAGE -->
+        <div id="categoryPage" class="category-page" style="display:none;">
+
+            <div class="category-page-header">
+                <h1 id="categoryPageTitle">Movies</h1>
+
+                <div class="genre-dropdown">
+                    <button id="genreButton" class="genre-button">
+                        Genres <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="genreMenu" class="genre-menu"></div>
+                </div>
+            </div>
+
+            <div id="categorySections" class="category-sections"></div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="movie-footer">
+        <div class="footer-container">
+            <p class="footer-question">
+                Questions? Call <a href="#">000-800-919-1694</a>
+            </p>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#">FAQ</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Speed Test</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Help Centre</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Cookie Preferences</a>
+                    <a href="#">Legal Notices</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Account</a>
+                    <a href="#">Ways to Watch</a>
+                    <a href="#">Corporate Information</a>
+                    <a href="#">Only on Netflix</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#">Media Centre</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <button class="language-btn">
+                    <i class="fa-solid fa-globe"></i> English
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <p class="netflix-country">Netflix Clone India</p>
+            </div>
+
+            <p class="copyright">
+                © 2026 Netflix Clone. Created for educational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="movies.js"></script>
+    <script src="home.js"></script>
+
+</body>
+</html>
